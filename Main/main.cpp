@@ -185,7 +185,33 @@ void residentMenu(const string& residentID) {
                 // Implement emergency reporting
                 break;
             case 2:
-                // Implement resident information update
+                /*string houseNo = residentID; // Fixed as the user's houseNo
+                int numOfPeople;
+                cout << "Enter the number of people in your house: ";
+                cin >> numOfPeople;
+
+                string* names = new string[numOfPeople];
+                string* phoneNumbers = new string[numOfPeople];
+                string* emailAddresses = new string[numOfPeople];
+                string* gender = new string[numOfPeople];
+                int* age = new int[numOfPeople];
+
+                cout << "Enter details for each family member:\n";
+                for (int i = 0; i < numOfPeople; ++i) {
+                    cout << "Details for family member " << i + 1 << ":\n";
+                    cout << "Name: ";
+                    cin >> names[i];
+                    cout << "Phone Number: ";
+                    cin >> phoneNumbers[i];
+                    cout << "Email Address: ";
+                    cin >> emailAddresses[i];
+                    cout << "Gender: ";
+                    cin >> gender[i];
+                    cout << "Age: ";
+                    cin >> age[i];
+                }
+                residentDB.updateResident(houseNo, numOfPeople, names, phoneNumbers, emailAddresses, gender, age);
+                cout << "Resident information updated!\n";*/
                 break;
             case 3:
                 residentDB.displayResident(residentID);
@@ -209,16 +235,44 @@ void adminMenu() {
         cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
+        string houseNo;
 
         switch (choice) {
             case 1:
-                // Implement viewing residents
+                cout << "All Residents in the Database:\n";
+                residentDB.displayAllResidents(); // Display all residents
                 break;
             case 2:
-                // Implement viewing emergency history
+                cout << "All Emergencies in the Database:\n";
+                emergencyDB.displayAllEmergencies(); // Display all emergencies
                 break;
             case 3:
-                // Implement updating resident data
+                int numOfPeople;
+                cout << "Enter the number of people in your house: ";
+                cin >> numOfPeople;
+
+                string* names = new string[numOfPeople];
+                string* phoneNumbers = new string[numOfPeople];
+                string* emailAddresses = new string[numOfPeople];
+                string* gender = new string[numOfPeople];
+                int* age = new int[numOfPeople];
+
+                cout << "Enter details for each family member:\n";
+                for (int i = 0; i < numOfPeople; ++i) {
+                    cout << "Details for family member " << i + 1 << ":\n";
+                    cout << "Name: ";
+                    cin >> names[i];
+                    cout << "Phone Number: ";
+                    cin >> phoneNumbers[i];
+                    cout << "Email Address: ";
+                    cin >> emailAddresses[i];
+                    cout << "Gender: ";
+                    cin >> gender[i];
+                    cout << "Age: ";
+                    cin >> age[i];
+                }
+                residentDB.updateResident(houseNo, numOfPeople, names, phoneNumbers, emailAddresses, gender, age);
+                cout << "Resident information updated!\n";
                 break;
             case 4:
                 cout << "Exiting Admin Menu.\n";
