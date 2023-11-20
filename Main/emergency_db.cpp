@@ -52,6 +52,22 @@ public:
         return nullptr; // Emergency report not found
     }
 
+    // Function to display all emergency reports in the database
+    void displayAllEmergencies() {
+        Emergency* current = head;
+        while (current != nullptr) {
+            // Display emergency details
+            cout << "Reporter: " << current->reporter << "\n";
+            cout << "Location: " << current->location << "\n";
+            cout << "Type: " << current->type << "\n";
+            cout << "Date and Time: " << current->dateTime << "\n";
+
+            cout << "---------------------\n";
+
+            current = current->next;
+        }
+    }
+
     // Function to delete an emergency report based on reporter's house number
     void deleteEmergency(const string& reporter) {
         Emergency* current = head;

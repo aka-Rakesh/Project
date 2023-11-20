@@ -70,6 +70,22 @@ public:
         }
     }
 
+    // Function to display all admins in the database
+    void displayAllAdmins() {
+        Admin* current = head;
+        while (current != nullptr) {
+            // Display admin details
+            cout << "Admin No.: " << current->adminNo << "\n";
+            cout << "Name: " << current->name << "\n";
+            cout << "Phone Number: " << current->phoneNumber << "\n";
+            cout << "Email: " << current->email << "\n";
+
+            cout << "---------------------\n";
+
+            current = current->next;
+        }
+    }
+
     // Function to delete an admin based on admin number
     void deleteAdmin(const string& adminNo) {
         Admin* current = head;

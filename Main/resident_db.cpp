@@ -116,6 +116,30 @@ public:
         }
     }
 
+    // Function to display all residents in the database
+    void displayAllResidents() {
+        Resident* current = head;
+        while (current != nullptr) {
+            // Display resident details
+            cout << "House No.: " << current->houseNo << ";";
+            cout << "Block Name: " << current->blockName << ";";
+            cout << "Number of People: " << current->numOfPeople << ";";
+            cout << "Details of Family Members: ";
+            for (int i = 0; i < current->numOfPeople; ++i) {
+                cout << current->names[i] << ", ";
+                cout << current->phoneNumbers[i] << ", ";
+                cout << current->emailAddresses[i] << ", ";
+                cout << current->gender[i] << ", ";
+                cout << current->age[i] << ", ";
+            }
+            cout << "\n";
+            
+            cout << "---------------------\n";
+
+            current = current->next;
+        }
+    }
+
     // Function to delete a resident based on house number
     void deleteResident(const string& houseNo) {
         Resident* current = head;
