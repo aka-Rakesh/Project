@@ -103,7 +103,7 @@ public:
 };
 
 // Example usage
-int main() {
+/*int main() {
     EmergencyDatabase emergencyDB;
 
     // Example: Adding an emergency report
@@ -121,4 +121,4 @@ int main() {
     emergencyDB.deleteEmergency("A101");
 
     return 0;
-}
+}*/

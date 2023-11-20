@@ -194,7 +194,7 @@ public:
 };
 
 // Example usage
-int main() {
+/*int main() {
     ResidentDatabase residentDB;
 
     // Example: Adding a resident
@@ -221,4 +221,4 @@ int main() {
     residentDB.deleteResident("A101");
 
     return 0;
-}
+}*/

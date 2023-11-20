@@ -121,7 +121,7 @@ public:
 };
 
 // Example usage
-int main() {
+/*int main() {
     AdminDatabase adminDB;
 
     // Example: Retrieving an admin
@@ -139,4 +139,4 @@ int main() {
     adminDB.deleteAdmin("admin0");
 
     return 0;
-}
+}*/
