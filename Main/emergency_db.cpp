@@ -57,9 +57,9 @@ public:
         Emergency* current = head;
         while (current != nullptr) {
             // Display emergency details
-            cout << "Reporter: " << current->reporter << "\n";
-            cout << "Location: " << current->location << "\n";
-            cout << "Type: " << current->type << "\n";
+            cout << "Reporter: " << current->reporter << "; ";
+            cout << "Location: " << current->location << "; ";
+            cout << "Type: " << current->type << "; ";
             cout << "Date and Time: " << current->dateTime << "\n";
 
             cout << "---------------------\n";

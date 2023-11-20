@@ -75,9 +75,9 @@ public:
         Admin* current = head;
         while (current != nullptr) {
             // Display admin details
-            cout << "Admin No.: " << current->adminNo << "\n";
-            cout << "Name: " << current->name << "\n";
-            cout << "Phone Number: " << current->phoneNumber << "\n";
+            cout << "Admin No.: " << current->adminNo << "; ";
+            cout << "Name: " << current->name << "; ";
+            cout << "Phone Number: " << current->phoneNumber << "; ";
             cout << "Email: " << current->email << "\n";
 
             cout << "---------------------\n";

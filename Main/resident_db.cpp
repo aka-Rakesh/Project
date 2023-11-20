@@ -121,22 +121,41 @@ public:
         Resident* current = head;
         while (current != nullptr) {
             // Display resident details
-            cout << "House No.: " << current->houseNo << ";";
-            cout << "Block Name: " << current->blockName << ";";
-            cout << "Number of People: " << current->numOfPeople << ";";
+            cout << "House No.: " << current->houseNo << "; ";
+            cout << "Block Name: " << current->blockName << "; ";
+            cout << "Number of People: " << current->numOfPeople << "; ";
             cout << "Details of Family Members: ";
             for (int i = 0; i < current->numOfPeople; ++i) {
                 cout << current->names[i] << ", ";
                 cout << current->phoneNumbers[i] << ", ";
                 cout << current->emailAddresses[i] << ", ";
                 cout << current->gender[i] << ", ";
-                cout << current->age[i] << ", ";
+                cout << current->age[i] << "\n";
             }
-            cout << "\n";
-            
             cout << "---------------------\n";
 
             current = current->next;
+        }
+    }
+
+    // Function to display information of a specific resident based on house number
+    void displayResident(const string& houseNo) {
+        Resident* resident = getResident(houseNo);
+        if (resident != nullptr) {
+            // Display resident details
+            cout << "House No.: " << resident->houseNo << "\n";
+            cout << "Block Name: " << resident->blockName << "\n";
+            cout << "Number of People: " << resident->numOfPeople << "\n";
+            cout << "Details of Family Members: ";
+            for (int i = 0; i < resident->numOfPeople; ++i) {
+                cout << resident->names[i] << ", ";
+                cout << resident->phoneNumbers[i] << ", ";
+                cout << resident->emailAddresses[i] << ", ";
+                cout << resident->gender[i] << ", ";
+                cout << resident->age[i] << "\n";
+            }
+        } else {
+            cout << "Resident not found.\n";
         }
     }
 

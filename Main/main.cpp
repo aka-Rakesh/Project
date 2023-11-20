@@ -145,8 +145,28 @@ void adminSignIn() {
 }
 
 void adminSignUp() {
-    // Admin sign up is not implemented in this basic example
-    cout << "Admin Sign Up functionality not implemented.\n";
+    string adminNo, password, name, phoneNumber, email;
+
+    cout << "Enter admin number: ";
+    cin >> adminNo;
+
+    // Check if admin already exists
+    if (adminDB.getAdmin(adminNo) != nullptr) {
+        cout << "Admin with this number already exists. Sign Up failed.\n";
+        return;
+    }
+
+    cout << "Enter password: ";
+    cin >> password;
+    cout << "Enter name: ";
+    cin >> name;
+    cout << "Enter phone number: ";
+    cin >> phoneNumber;
+    cout << "Enter email: ";
+    cin >> email;
+
+    adminDB.addAdmin(adminNo, password, name, phoneNumber, email);
+    cout << "Admin Sign Up successful!\n";
 }
 
 void residentMenu(const string& residentID) {
@@ -155,7 +175,8 @@ void residentMenu(const string& residentID) {
         cout << "Resident Menu\n";
         cout << "1. Report an Emergency\n";
         cout << "2. Update Information\n";
-        cout << "3. Exit\n";
+        cout << "3. View Family\n";
+        cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -167,6 +188,9 @@ void residentMenu(const string& residentID) {
                 // Implement resident information update
                 break;
             case 3:
+                residentDB.displayResident(residentID);
+                break;
+            case 4:
                 cout << "Exiting Resident Menu.\n";
                 return;
             default:
